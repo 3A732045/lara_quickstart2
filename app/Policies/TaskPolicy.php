@@ -18,4 +18,8 @@ class TaskPolicy
     {
         //
     }
+    public function destroy(User $user, Task $task)
+    {
+        return $user->id === $task->user_id;
+    }
 }
